@@ -22,18 +22,22 @@ def produto_lista(request):
     return render(request, 'produtos.html',context)
 
 
-
-
 def produto_lista_por_id(request,id):
 
     departamentos = Departamento.objects.all()
+    produtos_por_departamento = Produto.objects.filter(departamento_id = id)
+    categoria = departamentos.get(id = id).nome
 
     context = {
-        "departamentos": departamentos
+        "departamentos": departamentos,
+        "produtos": produtos_por_departamento,
+        "nome_categoria": categoria
+
+
     }
     return render(request, 'produtos.html',context)
 
-def produto_detalhe(request):
+def produto_detalhe(request, id):
 
     departamentos = Departamento.objects.all()
 

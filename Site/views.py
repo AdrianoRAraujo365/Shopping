@@ -66,13 +66,12 @@ def cadastro(request):
 
     departamentos = Departamento.objects.all()
     if request.method == "POST":
-
         formulario = ClientForm(request.POST)
         if formulario.is_valid():
             cliente = formulario.save()
-            formulario = ClienteForm()
+            formulario = ClientForm()
     else:
-        formulario = ClienteForm()
+        formulario = ClientForm()
 
     context = {
         "departamentos": departamentos,

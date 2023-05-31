@@ -43,7 +43,7 @@ class Cliente(models.Model):
     ]
     nome = models.CharField(max_length=50)
     cpf = models.CharField(max_length=14)
-    data_nascimento = models.DateField()
+    data_nascimento = models.DateField(verbose_name="Data de Nascimento")
     email = models.EmailField(max_length=120)
     endereco = models.CharField(max_length=250, verbose_name="Endereço")
     nro = models.IntegerField()

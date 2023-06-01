@@ -14,3 +14,15 @@ class ClientForm(forms.ModelForm):
             }
 
 
+class ContatoForm(forms.Form):
+    nome = forms.CharField()
+    email = forms.EmailField()
+    telefone = forms.CharField()
+    assunto = forms.CharField()
+    mensagem = forms.CharField()
+
+class Meta:
+    widgets = {
+        'telefone': forms.TextInput(attrs= {"class":'phone_with_ddd'}),
+        "mensagem": forms.Textarea,
+    }

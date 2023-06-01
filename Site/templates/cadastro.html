@@ -21,9 +21,18 @@ Cadastro
         <!-- Section-->
         <section class="py-5">
             <div class='container'>
+                
+
+
                 <form action="{% url 'cadastro' %}" method="POST">
                     {% csrf_token %}
                     <div class="col-md-6 offset-md-3">
+                        {% if mensagem %}
+                    <div class="alert alert-success" >
+                        {{ mensagem }}
+                    </div>
+                    
+                {% endif %}
                         {{form_cliente|crispy}}
                     
                          <input type="submit" value="Enviar" class="btn btn-success">

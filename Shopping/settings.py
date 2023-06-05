@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Site.context_processors.listar_departamentos',
             ],
         },
     },
@@ -138,4 +139,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'adriano.unifesp2012@gmail.com'
-EMAIL_HOST_PASSWORD = 'minhasenha'
+EMAIL_HOST_PASSWORD = 'wkyimdqbbstoigun'
